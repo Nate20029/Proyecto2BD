@@ -11,7 +11,7 @@ CREATE TABLE PELICULAS(
 	id_pelicula int NOT NULL PRIMARY KEY,
 	Nombre_especifico VARCHAR(20),
 	Parametro_especial INT,
-	Caregoria_de_Entretenimiento VARCHAR(20),
+	Categoria_de_Entretenimiento VARCHAR(20),
 	Actor_Estrella VARCHAR(20),
 	Director VARCHAR(20),
 	Genero VARCHAR(20),
