@@ -60,8 +60,9 @@ VALUES(10101,'Mulan', 1, 'Infantil', 'Eva Díe', 'Tony Bancroft y Barry Cook', '
 INSERT INTO series
 VALUES(010103, 'Flash', 0, 'Accion', 'Grant Gustin', 'Greg Berlanti', 'Ciencia ficción', 'Teen choice awards al mejor programa de acción', '2014/10/07');
 
+INSERT INTO perfiles
+VALUES('jessica',1,1234);
+
 INSERT INTO cuenta
 VALUES(1,'P', 1234);
 
-INSERT INTO perfiles
-VALUES('jessica',1,1234);
