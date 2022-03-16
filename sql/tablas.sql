@@ -44,9 +44,6 @@ CREATE TABLE Perfiles(
 ALTER TABLE cuenta
 ADD FOREIGN KEY (id_cuenta) REFERENCES perfiles(id_cuenta);
 
-ALTER TABLE cuenta
-ADD FOREIGN KEY (id_cuenta) REFERENCES perfiles(id_cuenta);
-
 INSERT INTO usuario
 VALUES(1234,'jessicaortiz15b@gmail.com', 'bts1234');
 
