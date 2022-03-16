@@ -43,7 +43,7 @@ CREATE TABLE Perfiles(
 
 CREATE TABLE Reproduccion(
 	Tiempo_restante TIME
-)
+);
 
 ALTER TABLE cuenta
 ADD FOREIGN KEY (id_cuenta) REFERENCES perfiles(id_cuenta);
