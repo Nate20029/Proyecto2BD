@@ -48,6 +48,11 @@ CREATE TABLE Reproduccion(
 	id_reproduccion int
 );
 
+ALTER TABLE SERIES
+ADD Duracion TIME;
+
+ALTER TABLE PELICULAS
+ADD Duracion TIME;
 
 ALTER TABLE cuenta
 ADD FOREIGN KEY (id_cuenta) REFERENCES perfiles(id_cuenta);
