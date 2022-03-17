@@ -45,7 +45,7 @@ CREATE TABLE Reproduccion(
 	Tiempo_reproduccion TIME,
 	id_cuenta int,
 	Serie_o_Pelicula VARCHAR(1),
-	id_reproduccion
+	id_reproduccion int
 );
 
 
