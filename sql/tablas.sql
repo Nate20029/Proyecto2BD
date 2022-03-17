@@ -42,8 +42,11 @@ CREATE TABLE Perfiles(
 );
 
 CREATE TABLE Reproduccion(
-	Tiempo_restante TIME
+	Tiempo_restante TIME,
+	id_cuenta int,
+	Serie_o_Pelicula VARCHAR(1)
 );
+
 
 ALTER TABLE cuenta
 ADD FOREIGN KEY (id_cuenta) REFERENCES perfiles(id_cuenta);
@@ -65,4 +68,7 @@ VALUES('jessica',1,1234);
 
 INSERT INTO cuenta
 VALUES(1,'P', 1234);
+
+INSERT INTO reproduccion
+VALUES('2:01:00',1, 'P');
 
