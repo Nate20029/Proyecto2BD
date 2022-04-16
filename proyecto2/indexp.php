@@ -8,8 +8,11 @@
 </head>
 <body>
     <?php
-        include_once ("conexion.php");
-        CConexion::ConexionBD();
+    
+        include_once ("tablas.php");
+        //include_once ("insert.php");
+        //include_once("select.php");
+
 
     ?>
     
