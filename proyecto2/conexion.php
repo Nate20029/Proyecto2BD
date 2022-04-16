@@ -10,7 +10,7 @@ class CConexion {
 
         try{
             $conn = new PDO ("pgsql:host=$host; dbname=$dbname", $username, $password);
-            echo "Se conecto correctamente";
+            //echo "Se conecto correctamente";
         }
         catch(PDOException $exp){
             echo ("No se pudo conectar a la base de datso $exp");

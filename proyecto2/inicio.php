@@ -31,11 +31,11 @@
                 <!--Formulario de Login y registro-->
                 <div class="contenedor__login-register">
                     <!--Login-->
-                    <form action="indexp.php" class="formulario__login">
+                    <form action="login.php" class="formulario__login" method = "post">
                         <h2>Iniciar Sesión</h2>
-                        <input type="text" placeholder="Correo Electronico">
-                        <input type="password" placeholder="Contraseña">
-                        <button>Entrar</button>
+                        <input type="text" placeholder="Correo Electronico" name = "correoI">
+                        <input type="password" placeholder="Contraseña" name = "contra">
+                        <input type="submit" name = "btentrar" class = "bt" value="Entrar">
                     </form>
 
                     <!--Register-->
@@ -46,7 +46,7 @@
                         <input type="text" placeholder="Usuario" name = "usuario">
                         <input type="password" placeholder="Contraseña" name = "contrasena">
                         <!--<a href="index.php">-->
-                        <input type="submit" name = "btenviar" value="Registrarse">
+                        <input type="submit" name = "btenviar" class = "bt" value="Registrarse">
                         <!--</a>-->
                     </form>
                 </div>
