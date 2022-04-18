@@ -1,5 +1,5 @@
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
+$filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(PDO::FETCH_OBJ)?>
 
 <IDOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@ $filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href ="css/style.css">
-    <title>MOVIBASE ADMIN</title>
+    <title>Document</title>
 </head>
 <body>
     <header class="hero">
@@ -21,16 +21,19 @@ $filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
             </div>
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="principal.html" class="nav__links">Inicio</a>
+                    <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Acerca de</a>
+                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Contacto</a>
+                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Blog</a>
+                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
             </ul>
@@ -43,51 +46,29 @@ $filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
     <div class="row">
         <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
-            <CENTER><h3 class="jumbotron">FORMULARIO AGREGAR</h3></CENTER>
-            <form action="funagregar.php" method="post" class="form-horizontal">
-                <div class="form-group">
-                <label class="col-sm-2 control-label">NOMBRE DE SERIE O PELICULA</label>
-                <div class="col-sm-10">
-                    <input name='nombre_serie_pelicula' type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">IMAGEN</label>
-                <div class="col-sm-10">
-                    <input name="imagen" type="text" class="form-control" placeholder="Pegue el link de la IMAGEN">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">LINK</label>
-                <div class="col-sm-10">
-                    <input name="links" type="text" class="form-control" placeholder="Pegue el link de la PELICULA/SERIE">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DIRECTOR</label>
-                <div class="col-sm-10">
-                    <input name="director" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">ESTRENO</label>
-                <div class="col-sm-10">
-                    <input name="estreno" type="text" class="form-control" placeholder="Escriba la fecha en este fomato: 2022-12-28">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DURACIÓN</label>
-                <div class="col-sm-10">
-                    <input name="duracion" type="text" class="form-control" placeholder="Escriba la duracion en este fomato: 00:00:00">
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">ACEPTAR</button>
-                </div>
-                </div>
-            </form>
+            <h3>Listado</h3>
+            <table class="table table-hover">
+                <thead><th>ID SERIE/PELICULA</th><th>NOMBRE SERIE/PELICULA</th><th>IMAGEN</th><th>LINK</th><th>DIRECTOR</th><th>ESTRENO</th><th>DURACIÓN</th><th>EDITAR</th><th>ELIMINAR</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($filas as $fila): ?>
+                        <tr>
+                            <td><?php echo $fila->id_sp; ?></td>
+                            <td><?php echo $fila->nombre_serie_pelicula; ?></td>
+                            <td><?php echo $fila->imagen; ?></td>
+                            <td><?php echo $fila->links; ?></td>
+                            <td><?php echo $fila->director; ?></td>
+                            <td><?php echo $fila->estreno; ?></td>
+                            <td><?php echo $fila->duracion; ?></td>
+                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarP.php?id_sp=<?php echo $fila->id_sp;?>"></a></td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarP.php?id_sp=<?php echo $fila->id_sp; ?>"></a></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+            <a class="btn btn-success" href="formagregarP.php">Agregar</a>
         </div>
+        
     </div>
     
     <footer class="footer">

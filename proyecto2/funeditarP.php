@@ -10,7 +10,7 @@ $duracion=$_POST['duracion'];
 include_once ("conexion.php"); 
 $db=CConexion::ConexionBD();
  if ($db->query("UPDATE serie_pelicula SET nombre_serie_pelicula='$nombre_serie_pelicula', imagen='$imagen', links='$links', director='$director', estreno='$estreno', duracion='$duracion'  WHERE id_sp='$id_sp'")) {
- 	header("location:peliculas.php");
+ 	header("location:Perfiles.php");
  } else {
  	echo 'Error al editar los datos';
  }

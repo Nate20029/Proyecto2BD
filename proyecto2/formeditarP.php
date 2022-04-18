@@ -25,16 +25,19 @@ $peliserie=$peliseries[0];
             </div>
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="principal.html" class="nav__links">Inicio</a>
+                    <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Acerca de</a>
+                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Contacto</a>
+                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Blog</a>
+                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
             </ul>
@@ -48,7 +51,7 @@ $peliserie=$peliseries[0];
         <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
             <CENTER><h3 class="jumbotron">FORMULARIO EDITAR</h3></CENTER>
-            <form action="funeditar.php" method="post" class="form-horizontal">
+            <form action="funeditarP.php" method="post" class="form-horizontal">
                 <div class="form-group">
                 <label class="col-sm-2 control-label">ID</label>
                 <div class="col-sm-10">

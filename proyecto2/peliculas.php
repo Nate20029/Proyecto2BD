@@ -24,13 +24,13 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
                     <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/tablaAnunciantes/Anunciantes.php" class="nav__links">Anunciantes</a>
+                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/tablaAnuncios/Anuncios.php" class="nav__links">Anuncios</a>
+                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/tablaAnuncios/Usuarios.php" class="nav__links">Usuarios</a>
+                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>

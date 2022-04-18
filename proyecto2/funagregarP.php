@@ -8,7 +8,7 @@ $duracion=$_POST['duracion'];
 include_once ("conexion.php"); 
 $db=CConexion::ConexionBD();
  if ($db->query("INSERT INTO serie_pelicula ( nombre_serie_pelicula,imagen,links,director,estreno,duracion) VALUES ('$nombre_serie_pelicula','$imagen','$links','$director','$estreno','$duracion')")) {
- 	header("location:peliculas.php");
+ 	header("location:Perfiles.php");
  } else {
  	echo 'Error al agregar los datos';
  }
