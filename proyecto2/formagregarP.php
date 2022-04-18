@@ -1,5 +1,5 @@
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
+$filas=$db->query("SELECT * FROM perfiles ")->fetchAll(PDO::FETCH_OBJ)?>
 
 <IDOCTYPE html>
 <html lang="es">
@@ -44,44 +44,13 @@ $filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
-            <CENTER><h3 class="jumbotron">FORMULARIO AGREGAR</h3></CENTER>
+            <CENTER><h3 class="jumbotron">AGREGAR PERFIL</h3></CENTER>
             <form action="funagregarP.php" method="post" class="form-horizontal">
                 <div class="form-group">
-                <label class="col-sm-2 control-label">NOMBRE DE SERIE O PELICULA</label>
+                <label class="col-sm-2 control-label">NOMBRE PERFIL</label>
                 <div class="col-sm-10">
-                    <input name='nombre_serie_pelicula' type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">IMAGEN</label>
-                <div class="col-sm-10">
-                    <input name="imagen" type="text" class="form-control" placeholder="Pegue el link de la IMAGEN">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">LINK</label>
-                <div class="col-sm-10">
-                    <input name="links" type="text" class="form-control" placeholder="Pegue el link de la PELICULA/SERIE">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DIRECTOR</label>
-                <div class="col-sm-10">
-                    <input name="director" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">ESTRENO</label>
-                <div class="col-sm-10">
-                    <input name="estreno" type="text" class="form-control" placeholder="Escriba la fecha en este fomato: 2022-12-28">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DURACIÓN</label>
-                <div class="col-sm-10">
-                    <input name="duracion" type="text" class="form-control" placeholder="Escriba la duracion en este fomato: 00:00:00">
+                    <input name='nombre_perfil' type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
                 </div>
                 </div>
                 <div class="form-group">

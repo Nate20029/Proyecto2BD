@@ -12,10 +12,13 @@
 		<div class="contenedor">
 			<h2 class="logotipo">MOVIBASE</h2>
 			<nav>
-				<a href="#" class="activo">Inicio</a>
-				<a href="peliculas.php">Películas</a>
-				<a href="#">Más Recientes</a>
-				<a href="#">Mi lista</a>
+				<a href="principal.php" class="activo">Home</a>
+				<a href="#">Mis favoritos</a>
+				<a href="#">Mis recomendaciones</a>
+				<a href="#">Mi historial</a>
+				<a href="Perfiles.php">Cambiar Perfil</a>.
+				<a href="planLogeado.php">Cambiar de Plan</a>
+				<a href="inicio.php">Cerrar Sesion</a>
 			</nav>
 		</div>
 	</header>

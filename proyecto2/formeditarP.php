@@ -1,8 +1,8 @@
 <?php   
-$id_sp=$_GET['id_sp'];
+$id=$_GET['id'];
 include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$peliseries=$db->query("SELECT * FROM serie_pelicula WHERE id_sp=$id_sp")->fetchAll(PDO::FETCH_OBJ);
-$peliserie=$peliseries[0];
+$perfiles=$db->query("SELECT * FROM perfiles WHERE id=$id")->fetchAll(PDO::FETCH_OBJ);
+$perfil=$perfiles[0];
 
 ?>
 <IDOCTYPE html>
@@ -48,55 +48,24 @@ $peliserie=$peliseries[0];
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
             <CENTER><h3 class="jumbotron">FORMULARIO EDITAR</h3></CENTER>
             <form action="funeditarP.php" method="post" class="form-horizontal">
-                <div class="form-group">
+            <div class="form-group">
                 <label class="col-sm-2 control-label">ID</label>
                 <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->id_sp; ?>" name='id_sp' type="text" class="form-control" placeholder="Escriba el código" readonly>
+                    <input value="<?php echo $perfil->id; ?>" name='id' type="text" class="form-control" placeholder="Escriba el código" readonly>
                 </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">NOMBRE SERIE/PELICULA</label>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">NOMBRE PERFIL</label>
                 <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->nombre_serie_pelicula; ?>" name="nombre_serie_pelicula" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">IMAGEN</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->imagen; ?>" name="imagen" type="text" class="form-control" placeholder="Pegue el link de la IMAGEN">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">LINK</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->links; ?>" name="links" type="text" class="form-control" placeholder="Pegue el link de la PELICULA/SERIE">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DIRECTOR</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->director; ?>" name="director" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">ESTRENO</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->estreno; ?>" name="estreno" type="text" class="form-control" placeholder="Escriba la fecha en este fomato: 2022-12-28">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DURACION</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $peliserie->duracion; ?>" name="duracion" type="text" class="form-control" placeholder="Escriba la duracion en este fomato: 00:00:00">
+                    <input value="<?php echo $perfil->nombre_perfil; ?>" name='nombre_perfil' type="text" class="form-control" placeholder="Escriba el nombre del perfil">
                 </div>
                 </div>
                 <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Editar</button>
+                    <button type="submit" class="btn btn-success">ACEPTAR</button>
                 </div>
                 </div>
             </form>

@@ -1,5 +1,5 @@
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(PDO::FETCH_OBJ)?>
+$filas=$db->query("SELECT * FROM perfiles ORDER BY id ASC ")->fetchAll(PDO::FETCH_OBJ)?>
 
 <IDOCTYPE html>
 <html lang="es">
@@ -44,24 +44,19 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
-            <h3>Listado</h3>
+            <h3>Perfiles</h3>
             <table class="table table-hover">
-                <thead><th>ID SERIE/PELICULA</th><th>NOMBRE SERIE/PELICULA</th><th>IMAGEN</th><th>LINK</th><th>DIRECTOR</th><th>ESTRENO</th><th>DURACIÓN</th><th>EDITAR</th><th>ELIMINAR</th>
+                <thead><th>ID PERFIL</th><th>NOMBRE DEL PERFIL</th><th>EDITAR</th><th>ELIMINAR</th><th>Ingresar</th>
                 </thead>
                 <tbody>
                     <?php foreach ($filas as $fila): ?>
                         <tr>
-                            <td><?php echo $fila->id_sp; ?></td>
-                            <td><?php echo $fila->nombre_serie_pelicula; ?></td>
-                            <td><?php echo $fila->imagen; ?></td>
-                            <td><?php echo $fila->links; ?></td>
-                            <td><?php echo $fila->director; ?></td>
-                            <td><?php echo $fila->estreno; ?></td>
-                            <td><?php echo $fila->duracion; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarP.php?id_sp=<?php echo $fila->id_sp;?>"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarP.php?id_sp=<?php echo $fila->id_sp; ?>"></a></td>
+                            <td><?php echo $fila->id; ?></td>
+                            <td><?php echo $fila->nombre_perfil; ?></td>
+                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarP.php?id=<?php echo $fila->id;?>"></a></td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarP.php?id=<?php echo $fila->id; ?>"></a></td>
+                            <td><a class="btn btn-success glyphicon glyphicon-play-circle" href="ingresarPerfil.php?nombre=<?php echo $fila->nombre_perfil; ?>"></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

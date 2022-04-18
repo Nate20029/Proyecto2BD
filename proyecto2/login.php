@@ -36,7 +36,7 @@ if ($publishers) {
 			$bandera = 1;
 			setcookie("contadorCK", 1, time() - 30*24*60*60);
 			$cont = 1;
-			include_once ("principal.php");
+			include_once ("Perfiles.php");
 		}
 
 	}

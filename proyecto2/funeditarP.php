@@ -1,15 +1,10 @@
 <?php 
-$id_sp=$_POST['id_sp'];
-$nombre_serie_pelicula=$_POST['nombre_serie_pelicula'];
-$imagen=$_POST['imagen'];
-$links=$_POST['links'];
-$director=$_POST['director'];
-$estreno=$_POST['estreno'];
-$duracion=$_POST['duracion'];
+$id=$_POST['id'];
+$nombre_perfil=$_POST['nombre_perfil'];
 
 include_once ("conexion.php"); 
 $db=CConexion::ConexionBD();
- if ($db->query("UPDATE serie_pelicula SET nombre_serie_pelicula='$nombre_serie_pelicula', imagen='$imagen', links='$links', director='$director', estreno='$estreno', duracion='$duracion'  WHERE id_sp='$id_sp'")) {
+ if ($db->query("UPDATE perfiles SET nombre_perfil='$nombre_perfil'  WHERE id='$id'")) {
  	header("location:Perfiles.php");
  } else {
  	echo 'Error al editar los datos';
