@@ -18,7 +18,7 @@
             </div>
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="inicio.html" class="nav__links">Inicio</a>
+                    <a href="#" class="nav__links">Inicio</a>
                 </li>
                 <li class="nav__items">
                     <a href="#" class="nav__links">Acerca de</a>
@@ -27,7 +27,7 @@
                     <a href="#" class="nav__links">Contacto</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Blog</a>
+                    <a href="inicio.php" class="nav__links">Cerrar Sesion</a>
                 </li>
 
                <img src="./images/close.svg" class="nav__close">
