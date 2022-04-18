@@ -13,8 +13,7 @@
 			<h2 class="logotipo">MOVIBASE</h2>
 			<nav>
 				<a href="#" class="activo">Inicio</a>
-				<a href="#">Programas</a>
-				<a href="#">Películas</a>
+				<a href="peliculas.php">Películas</a>
 				<a href="#">Más Recientes</a>
 				<a href="#">Mi lista</a>
 			</nav>
@@ -28,7 +27,7 @@
 				<p class="descripcion">
 					Narra las aventuras de un grupo de exploradores que hacen uso de un agujero de gusano recientemente descubierto para superar las limitaciones de los viajes espaciales tripulados y vencer las inmensas distancias que tiene un viaje interestelar.
 				</p>
-				<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+				<button role="button" class="boton" > </a> <i class="fas fa-play"> </i>Reproducir</button>
 				<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
 			</div>
 		</div>
@@ -45,7 +44,7 @@
 				<div class="contenedor-carousel">
 					<div class="carousel">
 						<div class="pelicula">
-							<a href="https://www.youtube.com/watch?v=NWMRx4G9zjo"><img src="images/1.png" alt=""></a>
+							<a href="https://www.youtube.com/watch?v=NWMRx4G9zjo"><img src="https://www.philhobden.co.uk/wp-content/uploads/2019/03/maxresdefault.jpg"></a>
 						</div>
 						<div class="pelicula">
 							<a href="#"><img src="images/2.png" alt=""></a>
