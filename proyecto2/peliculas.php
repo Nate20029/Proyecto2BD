@@ -30,7 +30,7 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
                     <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
+                    <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
@@ -44,7 +44,6 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
             <h3>Listado</h3>
             <table class="table table-hover">

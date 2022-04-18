@@ -8,9 +8,9 @@
 	<title>MOVIBASE</title>
 </head>
 <body>
-	<header>
+<header>
 		<div class="contenedor">
-			<h2 class="logotipo">MOVIBASE</h2>
+			<h2 class="logotipo">MOVIEBASE</h2>
 			<nav>
 				<a href="principal.php" class="activo">Home</a>
 				<a href="#">Mis favoritos</a>
@@ -18,6 +18,7 @@
 				<a href="#">Mi historial</a>
 				<a href="Perfiles.php">Cambiar Perfil</a>.
 				<a href="planLogeado.php">Cambiar de Plan</a>
+				<a href="peliculas.php">Administrador</a>
 				<a href="inicio.php">Cerrar Sesion</a>
 			</nav>
 		</div>

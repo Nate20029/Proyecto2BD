@@ -1,8 +1,8 @@
 <?php   
 $id=$_GET['id'];
 include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$perfiles=$db->query("SELECT * FROM perfiles WHERE id=$id")->fetchAll(PDO::FETCH_OBJ);
-$perfil=$perfiles[0];
+$usuarios=$db->query("SELECT id,nombre_com,userc,email,tipo_cuenta,c_admin FROM cuentas WHERE id=$id")->fetchAll(PDO::FETCH_OBJ);
+$usuario=$usuarios[0];
 
 ?>
 <IDOCTYPE html>
@@ -15,10 +15,10 @@ $perfil=$perfiles[0];
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href ="css/style.css">
-    <title>MOVIBASE ADMIN</title>
+    <title>Document</title>
 </head>
 <body>
-    <header class="hero">
+<header class="hero">
         <nav class="nav container">
             <div class="nav__logo">
                 <h2 class="nav__title">MOVIEBASE</h2>
@@ -34,7 +34,7 @@ $perfil=$perfiles[0];
                     <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
+                    <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
@@ -50,22 +50,46 @@ $perfil=$perfiles[0];
     <div class="row">
         <div class="col-sm-8">
             <CENTER><h3 class="jumbotron">FORMULARIO EDITAR</h3></CENTER>
-            <form action="funeditarP.php" method="post" class="form-horizontal">
-            <div class="form-group">
+            <form action="funeditaruser.php" method="post" class="form-horizontal">
+                <div class="form-group">
                 <label class="col-sm-2 control-label">ID</label>
                 <div class="col-sm-10">
-                    <input value="<?php echo $perfil->id; ?>" name='id' type="text" class="form-control" placeholder="Escriba el código" readonly>
+                    <input value="<?php echo $usuario->id; ?>" name='id' type="text" class="form-control" placeholder="Escriba el código" readonly>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">NOMBRE PERFIL</label>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label">NOMBRE COMPLETO</label>
                 <div class="col-sm-10">
-                    <input value="<?php echo $perfil->nombre_perfil; ?>" name='nombre_perfil' type="text" class="form-control" placeholder="Escriba el nombre del perfil">
+                    <input value="<?php echo $usuario->nombre_com; ?>" name="nombre_com" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
+                </div>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label">USUARIO</label>
+                <div class="col-sm-10">
+                    <input value="<?php echo $usuario->userc; ?>" name="userc" type="text" class="form-control" placeholder="Pegue el link de la IMAGEN">
+                </div>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label">EMAIL</label>
+                <div class="col-sm-10">
+                    <input value="<?php echo $usuario->email; ?>" name="email" type="text" class="form-control" placeholder="Pegue el link de la PELICULA/SERIE">
+                </div>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label">TIPO DE CUENTA</label>
+                <div class="col-sm-10">
+                    <input value="<?php echo $usuario->tipo_cuenta; ?>" name="tipo_cuenta" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
+                </div>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label">CUENTA ADMINISTRADORO</label>
+                <div class="col-sm-10">
+                    <input value="<?php echo $usuario->c_admin; ?>" name="c_admin" type="text" class="form-control" placeholder="Escriba la fecha en este fomato: 2022-12-28">
                 </div>
                 </div>
                 <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">ACEPTAR</button>
+                    <button type="submit" class="btn btn-success">Editar</button>
                 </div>
                 </div>
             </form>

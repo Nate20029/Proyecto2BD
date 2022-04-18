@@ -1,10 +1,6 @@
-<?php   
-$id=$_GET['id'];
-include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$perfiles=$db->query("SELECT * FROM perfiles WHERE id=$id")->fetchAll(PDO::FETCH_OBJ);
-$perfil=$perfiles[0];
+<?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
+$filas=$db->query("SELECT id,nombre_com,userc,email,pass_hash,tipo_cuenta,c_admin FROM cuentas ")->fetchAll(PDO::FETCH_OBJ)?>
 
-?>
 <IDOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +11,7 @@ $perfil=$perfiles[0];
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href ="css/style.css">
-    <title>MOVIBASE ADMIN</title>
+    <title>Document</title>
 </head>
 <body>
     <header class="hero">
@@ -28,13 +24,13 @@ $perfil=$perfiles[0];
                     <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
-                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
+                    <a href="#" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
+                    <a href="#" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
+                    <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
@@ -48,31 +44,32 @@ $perfil=$perfiles[0];
     </header>
     
     <div class="row">
+        
+        <!--<div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div> -->
         <div class="col-sm-8">
-            <CENTER><h3 class="jumbotron">FORMULARIO EDITAR</h3></CENTER>
-            <form action="funeditarP.php" method="post" class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-2 control-label">ID</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $perfil->id; ?>" name='id' type="text" class="form-control" placeholder="Escriba el código" readonly>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">NOMBRE PERFIL</label>
-                <div class="col-sm-10">
-                    <input value="<?php echo $perfil->nombre_perfil; ?>" name='nombre_perfil' type="text" class="form-control" placeholder="Escriba el nombre del perfil">
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">ACEPTAR</button>
-                </div>
-                </div>
-            </form>
+            <h3>Listado</h3>
+            <table class="table table-hover">
+                <thead><th>ID</th><th>NOMBRE COMPLETO</th><th>USUARIO</th><th>EMAIL</th><th>TIPO DE CUENTA</th><th>CUENTA ADMINISTRADOR</th><th>EDITAR</th><th>ELIMINAR</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($filas as $fila): ?>
+                        <tr>
+                            <td><?php echo $fila->id; ?></td>
+                            <td><?php echo $fila->nombre_com; ?></td>
+                            <td><?php echo $fila->userc; ?></td>
+                            <td><?php echo $fila->email; ?></td>
+                            <td><?php echo $fila->tipo_cuenta; ?></td>
+                            <td><?php echo $fila->c_admin; ?></td>
+                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditaruser.php?id=<?php echo $fila->id;?>"></a></td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminaruser.php?id=<?php echo $fila->id; ?>"></a></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
         </div>
+         
         
     </div>
-    
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
