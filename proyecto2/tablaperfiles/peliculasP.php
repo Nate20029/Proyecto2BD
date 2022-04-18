@@ -21,19 +21,16 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
             </div>
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="principal.php" class="nav__links">Home</a>
+                    <a href="principal.html" class="nav__links">Inicio</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/tablaAnunciantes/Anunciantes.php" class="nav__links">Anunciantes</a>
+                    <a href="#" class="nav__links">Acerca de</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/tablaAnuncios/Anuncios.php" class="nav__links">Anuncios</a>
+                    <a href="#" class="nav__links">Contacto</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/tablaAnuncios/Usuarios.php" class="nav__links">Usuarios</a>
-                </li>
-                <li class="nav__items">
-                    <a href="inicio.php" class="nav__links">Cerrar sesion</a>
+                    <a href="#" class="nav__links">Blog</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
             </ul>
