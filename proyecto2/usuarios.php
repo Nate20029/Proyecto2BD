@@ -24,6 +24,9 @@ $filas=$db->query("SELECT id,nombre_com,userc,email,pass_hash,tipo_cuenta,c_admi
                     <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
+                    <a href="peliculas.php" class="nav__links">Peliculas/Series</a>
+                </li>
+                <li class="nav__items">
                     <a href="#" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">

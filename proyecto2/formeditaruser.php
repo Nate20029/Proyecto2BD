@@ -28,6 +28,9 @@ $usuario=$usuarios[0];
                     <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
+                    <a href="peliculas.php" class="nav__links">Peliculas/Series</a>
+                </li>
+                <li class="nav__items">
                     <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">

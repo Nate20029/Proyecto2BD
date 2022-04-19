@@ -1,7 +1,7 @@
 <?php   
-$id=$_GET['id'];
+$id_sp=$_GET['id_sp'];
 include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$perfiles=$db->query("SELECT * FROM perfiles WHERE id=$id")->fetchAll(PDO::FETCH_OBJ);
+$perfiles=$db->query("SELECT * FROM perfiles WHERE id_sp=$id_sp")->fetchAll(PDO::FETCH_OBJ);
 $perfil=$perfiles[0];
 
 ?>
@@ -26,6 +26,9 @@ $perfil=$perfiles[0];
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
                     <a href="principal.php" class="nav__links">Home</a>
+                </li>
+                <li class="nav__items">
+                    <a href="peliculas.php" class="nav__links">Peliculas/Series</a>
                 </li>
                 <li class="nav__items">
                     <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
@@ -54,7 +57,7 @@ $perfil=$perfiles[0];
             <div class="form-group">
                 <label class="col-sm-2 control-label">ID</label>
                 <div class="col-sm-10">
-                    <input value="<?php echo $perfil->id; ?>" name='id' type="text" class="form-control" placeholder="Escriba el código" readonly>
+                    <input value="<?php echo $perfil->id_sp; ?>" name='id_sp' type="text" class="form-control" placeholder="Escriba el código" readonly>
                 </div>
             </div>
             <div class="form-group">
