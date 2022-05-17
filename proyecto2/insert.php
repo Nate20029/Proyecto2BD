@@ -16,7 +16,7 @@ try {
 
 
   $sql = "INSERT INTO Cuentas (nombre_com, userc, email, pass_hash, tipo_cuenta, c_admin)
-  VALUES ('$NC','$usuario','$correo','$pass_hash', 'estandar', 0)";
+  VALUES ('$NC','$usuario','$correo','$pass_hash', 'basica', 0)";
   // use exec() because no results are returned
   $conn->exec($sql);
   //echo "New record created successfully";
