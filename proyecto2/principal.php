@@ -18,7 +18,7 @@
 				<a href="#">Mi historial</a>
 				<a href="Perfiles.php">Cambiar Perfil</a>.
 				<a href="planLogeado.php">Cambiar de Plan</a>
-				<a href="peliculas.php">Administrador</a>
+				<a href="verificarAdmin.php">Administrador</a>
 				<a href="inicio.php">Cerrar Sesion</a>
 			</nav>
 		</div>
