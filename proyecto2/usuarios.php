@@ -27,10 +27,10 @@ $filas=$db->query("SELECT id,nombre_com,userc,email,pass_hash,tipo_cuenta,c_admi
                     <a href="peliculas.php" class="nav__links">Peliculas/Series</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Anunciantes</a>
+                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Anuncios</a>
+                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
@@ -50,7 +50,7 @@ $filas=$db->query("SELECT id,nombre_com,userc,email,pass_hash,tipo_cuenta,c_admi
         
         <!--<div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div> -->
         <div class="col-sm-8">
-            <h3>Listado</h3>
+            <h3>Listado de USUARIOS</h3>
             <table class="table table-hover">
                 <thead><th>ID</th><th>NOMBRE COMPLETO</th><th>USUARIO</th><th>EMAIL</th><th>TIPO DE CUENTA</th><th>CUENTA ADMINISTRADOR</th><th>EDITAR</th><th>ELIMINAR</th>
                 </thead>

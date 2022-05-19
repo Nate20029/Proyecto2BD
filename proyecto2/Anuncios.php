@@ -21,16 +21,22 @@ $filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETC
             </div>
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="principal.html" class="nav__links">Inicio</a>
+                    <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Acerca de</a>
+                    <a href="peliculas.php" class="nav__links">Peliculas/Series</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Contacto</a>
+                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Blog</a>
+                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="usuarios.php" class="nav__links">Usuarios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
             </ul>
@@ -41,9 +47,8 @@ $filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETC
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
-            <h3>Listado</h3>
+            <h3>Listado de ANUNCIOS</h3>
             <table class="table table-hover">
                 <thead><th>ID ANUNCIO</th><th>NOMBRE ANUNCIO</th><th>LINK</th><th>EDITAR</th><th>ELIMINAR</th>
                 </thead>
@@ -63,34 +68,7 @@ $filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETC
         </div>
         
     </div>
-    
-    <footer class="footer">
-        <section class="footer__container container">
-            <nav class="nav nav--footer">
-                <h2 class="footer__title">MOVIEBASE</h2>
-                <ul class="nav__link nav__link--footer">
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Inicio</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Acerca de</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Contacto</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Blog</a>
-                    </li>
-                </ul>
-            </nav>
-            <form class="footer__form" action="https://formspree.io/f/mayvpyqp" method="POST">
-                <h2 class="footer__newsletter">Inicia Sesion</h2>
-                <div class="footer__inputs">
-                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto">
-                    <input type="submit" value="Iniciar Sesion" class="footer__submit">
-                </div>
-            </form>
-        </section>
+    >
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

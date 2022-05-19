@@ -39,7 +39,7 @@
                     </form>
 
                     <!--Register-->
-                    <form action="index.php" class="formulario__register" method = "post">
+                    <form action="planRegistro.php" class="formulario__register" method = "post">
                         <h2>Regístrarse</h2>
                         <input type="text" placeholder="Nombre completo" name = "nombre_completo"> 
                         <input type="text" placeholder="Correo Electronico" name = "correo">

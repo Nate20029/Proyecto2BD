@@ -21,16 +21,19 @@ $filas=$db->query("SELECT * FROM Anuncios ")->fetchAll(PDO::FETCH_OBJ)?>
             </div>
             <ul class="nav__link nav__link--menu">
                 <li class="nav__items">
-                    <a href="principal.html" class="nav__links">Inicio</a>
+                    <a href="principal.php" class="nav__links">Home</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Acerca de</a>
+                    <a href="Anunciantes.php" class="nav__links">Anunciantes</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Contacto</a>
+                    <a href="Anuncios.php" class="nav__links">Anuncios</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Blog</a>
+                    <a href="Usuarios.php" class="nav__links">Usuarios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
             </ul>
@@ -41,7 +44,6 @@ $filas=$db->query("SELECT * FROM Anuncios ")->fetchAll(PDO::FETCH_OBJ)?>
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
             <CENTER><h3 class="jumbotron">FORMULARIO AGREGAR</h3></CENTER>
             <form action="funagregarA.php" method="post" class="form-horizontal">
