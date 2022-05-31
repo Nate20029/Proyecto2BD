@@ -147,6 +147,71 @@
 
         </div>
         
+        <div class="col-sm-8">
+        <br><br><br>
+            <h4>● El top 20 de películas que comenzaron a verse pero que llevan más de 20 días sin finalizarse, para un rango de fechas dado.</h4><br><br>
+            
+            <!-- Datos de simulacion -->
+
+            <form action="reporteria.php" method="post" class="form-horizontal">
+            <h5>Entre que fechas quiere la consulta:</h5> <br><br>
+            <h5>Fecha1:</h5>
+            <input name="fechaR4" type="text" class="form-control" placeholder="Ejemplo: 2000-01-01 "></input><br><br>
+
+            <h5>Fecha2:</h5>
+            <input name="fechaR4b" type="text" class="form-control" placeholder="Ejemplo: 2002-02-02"></input><br><br>
+            
+            <button  name = "btenviarR4" type="submit" class="btn btn-success">Ejecutar</button>
+
+            </form>
+
+            <?php   
+            try{
+            if(isset($_POST['btenviarR4']))
+            {
+                $fecha1 = $_POST['fechaR4'];
+                $fecha2 = $_POST['fechaR4b'];
+                      
+
+            include_once ("conexion.php");  $db=CConexion::ConexionBD();
+            $filas=$db->query("	SELECT serie_pelicula, COUNT(serie_pelicula) as cantidad from reproducciones
+            where fecha BETWEEN '$fecha1' AND '$fecha2'
+            AND(hora_final IS NULL)
+            group by serie_pelicula order by cantidad desc limit 20;")->fetchAll(PDO::FETCH_OBJ);
+            }
+            else{
+                include_once ("conexion.php");  $db=CConexion::ConexionBD();
+                $filas=$db->query("	SELECT serie_pelicula, COUNT(serie_pelicula) as cantidad from reproducciones
+                where fecha BETWEEN '2000-01-01' AND '2002-02-02'
+                AND(hora_final IS NULL)
+                group by serie_pelicula order by cantidad desc limit 20;")->fetchAll(PDO::FETCH_OBJ);
+            }
+            }
+            catch(PDOException $e){
+               
+            }
+            
+            
+            ?>
+
+            <table class="table table-hover">
+                <br>
+                <h4>Si no ha ingresado un rango de fechas a consultar el reporte que se muestra predeterminadamente es entre 2000-01-01 y 2002-02-02 </h4>
+                <thead><th>SERIE_PELICULA</th><th>COUNT</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($filas as $fila): ?>
+                        <tr>
+                            <td><?php echo $fila->serie_pelicula; ?></td>
+                            <td><?php echo $fila->cantidad; ?></td>
+
+
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+        
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
