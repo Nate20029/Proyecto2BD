@@ -13,9 +13,7 @@
 			<h2 class="logotipo">MOVIEBASE</h2>
 			<nav>
 				<a href="principal.php" class="activo">Home</a>
-				<a href="#">Mis favoritos</a>
-				<a href="#">Mis recomendaciones</a>
-				<a href="#">Mi historial</a>
+				<a href ="busqueda.php" class="">Busqueda</a>
 				<a href="Perfiles.php">Cambiar Perfil</a>.
 				<a href="planLogeado.php">Cambiar de Plan</a>
 				<a href="verificarAdmin.php">Administrador</a>
