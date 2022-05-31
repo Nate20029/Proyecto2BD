@@ -1,3 +1,4 @@
+
 <IDOCTYPE html>
 <html lang="es">
     <head>
@@ -34,25 +35,25 @@
 
         <div >
         <br><br><br>
-            <form method="post">
+            <form method="post" action="funbusqueda.php">
             <label> Search </label>
             <input type="text" name="search">
-            <input type="submit" name="submit">
+            <input type="submit" name="submit" >
         </div>
+
+       
 
     </body>
 </html>
 
+
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
 if (isset($_POST["submit"])){
-    $str = $_POST["search"];
-    $sth = $db ->query("SELECT id_sp, nombre_serie_pelicula, director, duracion FROM serie_pelicula WHERE (nombre_serie_pelicula = '$str') OR (director = '$str')");
+    $str = $_POST['search'];
+    $sth = $db ->query("SELECT id_sp, nombre_serie_pelicula, director,duracion FROM serie_pelicula WHERE (nombre_serie_pelicula = '$str') OR (director = '$str')");
     $sth -> setFetchMode(PDO :: FETCH_OBJ);
     $sth -> execute();
 
-    //$sta = $db ->query("INSERT INTO busqueda(buscador) VALUES '$str'");
-    //$sta -> setFetchMode(PDO :: FETCH_OBJ);
-    //$sta -> execute();
 
     if ($row = $sth ->fetch()){
         ?>
@@ -80,5 +81,7 @@ if (isset($_POST["submit"])){
 }
 
 ?>
+
+
     
 
