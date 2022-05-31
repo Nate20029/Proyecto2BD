@@ -36,6 +36,9 @@ $filas=$db->query("SELECT * FROM Anunciante ORDER BY id ASC ")->fetchAll(PDO::FE
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
+                    <a href="simulacion.php" class="nav__links">Simulacion</a>
+                </li>
+                <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
