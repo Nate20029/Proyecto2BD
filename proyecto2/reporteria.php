@@ -52,7 +52,7 @@
         <div class="col-sm-8">
             <h3>Reporteria</h3><br><br>
 
-            <h4>El top 5 de contenido visto en cada hora, de 9:00 a.m a 1:00 a.m para un mes dado</h4><br><br>
+            <h4>●El top 5 de contenido visto en cada hora, de 9:00 a.m a 1:00 a.m para un mes dado</h4><br><br>
             
             <!-- Datos de simulacion -->
 
@@ -113,7 +113,7 @@
 
         <div class="col-sm-8">
             <br><br>
-        <h4>El top 10 de los términos que los usuarios buscan (no necesariamente debe estar el contenido, actores, etc., en la plataforma)</h4><br>
+        <h4>●El top 10 de los términos que los usuarios buscan (no necesariamente debe estar el contenido, actores, etc., en la plataforma)</h4><br>
             
             <!-- Datos de simulacion -->
 
