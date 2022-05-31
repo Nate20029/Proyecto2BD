@@ -124,7 +124,7 @@
             try{
                 
             include_once ("conexion.php");  $db=CConexion::ConexionBD();
-            $filas2=$db->query("SELECT * FROM busqueda")->fetchAll(PDO::FETCH_OBJ);
+            $filas2=$db->query("SELECT buscador, COUNT (buscador) as busquedas FROM busqueda GROUP BY buscador ORDER BY busquedas DESC LIMIT 10;")->fetchAll(PDO::FETCH_OBJ);
             }
             catch(PDOException $e){
                
@@ -139,6 +139,7 @@
                     <?php foreach ($filas2 as $fila): ?>
                         <tr>
                             <td><?php echo $fila->buscador; ?></td>
+                            <td><?php echo $fila->busquedas; ?></td>
 
                         </tr>
                     <?php endforeach ?>
