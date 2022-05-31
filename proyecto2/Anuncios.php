@@ -39,6 +39,9 @@ $filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETC
                     <a href="simulacion.php" class="nav__links">Simulacion</a>
                 </li>
                 <li class="nav__items">
+                    <a href="reporteria.php" class="nav__links">Reporteria</a>
+                </li>
+                <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">

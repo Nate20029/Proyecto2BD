@@ -1,5 +1,4 @@
-<?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM reproducciones ORDER BY id ASC ")->fetchAll(PDO::FETCH_OBJ)?>
+
 
 <IDOCTYPE html>
 <html lang="es">
@@ -39,9 +38,6 @@ $filas=$db->query("SELECT * FROM reproducciones ORDER BY id ASC ")->fetchAll(PDO
                     <a href="simulacion.php" class="nav__links">Simulacion</a>
                 </li>
                 <li class="nav__items">
-                    <a href="reporteria.php" class="nav__links">Reporteria</a>
-                </li>
-                <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
@@ -54,38 +50,98 @@ $filas=$db->query("SELECT * FROM reproducciones ORDER BY id ASC ")->fetchAll(PDO
     
     <div class="row">
         <div class="col-sm-8">
-            <h3>SIMULACION DE OPERACIONES</h3><br><br>
+            <h3>Reporteria</h3><br><br>
+
+            <h4>El top 5 de contenido visto en cada hora, de 9:00 a.m a 1:00 a.m para un mes dado</h4><br><br>
             
             <!-- Datos de simulacion -->
 
-            <form action="simulacionCreada.php" method="post" class="form-horizontal">
-            <h5>Ingrese una fecha de reproduccion:</h5>
-            <input name="fecha" type="text" class="form-control" placeholder="Ejemplo: 2022-05-01"></input><br><br>
-
-            <h5>Cantidad de visualizaciones deseadas:</h5>
-            <input name="visualizacion" type="text" class="form-control" placeholder="Ejemplo: 1"></input><br><br>
+            <form action="reporteria.php" method="post" class="form-horizontal">
+            <h5>De que mes desea consultar:</h5>
+            <input name="fechaR" type="text" class="form-control" placeholder="Ejemplo: 01"></input><br><br>
             
-            <button  type="submit" class="btn btn-success">Generar</button>
+            <button  name = "btenviarR" type="submit" class="btn btn-success">Ejecutar</button>
 
             </form>
 
+            <?php   
+            try{
+            if(isset($_POST['btenviarR']))
+            {
+                $mes = $_POST['fechaR'];
+                      
+
+            include_once ("conexion.php");  $db=CConexion::ConexionBD();
+            $filas=$db->query("SELECT serie_pelicula, COUNT(serie_pelicula)  as cantidad from reproducciones
+            where extract (month from fecha ) = $mes
+            and extract (hour from hora_inicial) not between 1 and 8 
+            group by serie_pelicula order by cantidad desc limit 5;")->fetchAll(PDO::FETCH_OBJ);
+            }
+            else{
+                include_once ("conexion.php");  $db=CConexion::ConexionBD();
+                $filas=$db->query("SELECT serie_pelicula, COUNT(serie_pelicula)  as cantidad from reproducciones
+                where extract (month from fecha ) = 01
+                and extract (hour from hora_inicial) not between 1 and 8 
+                group by serie_pelicula order by cantidad desc limit 5;")->fetchAll(PDO::FETCH_OBJ);
+            }
+            }
+            catch(PDOException $e){
+               
+            }
+            
+            
+            ?>
+
             <table class="table table-hover">
-                <thead><th>ID</th><th>EMAIL</th><th></th>PERFIL<th>SERIE_PELICULA</th><th>FECHA</th><th>HORA_INICIAL</th><th>HORA_FINAL</th>
+                <br>
+                <h4>Si no ha ingresado un mes a consultar el que le muestra predeterminadamente es del mes 01</h4>
+                <thead><th>SERIE_PELICULA</th><th>COUNT</th>
                 </thead>
                 <tbody>
                     <?php foreach ($filas as $fila): ?>
                         <tr>
-                            <td><?php echo $fila->id; ?></td>
-                            <td><?php echo $fila->email; ?></td>
-                            <td><?php echo $fila->perfil; ?></td>
                             <td><?php echo $fila->serie_pelicula; ?></td>
-                            <td><?php echo $fila->fecha; ?></td>
-                            <td><?php echo $fila->hora_inicial; ?></td>
-                            <td><?php echo $fila->hora_final; ?></td>
+                            <td><?php echo $fila->cantidad; ?></td>
+
+
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
+        </div>
+
+
+        <div class="col-sm-8">
+            <br><br>
+        <h4>El top 10 de los términos que los usuarios buscan (no necesariamente debe estar el contenido, actores, etc., en la plataforma)</h4><br>
+            
+            <!-- Datos de simulacion -->
+
+            <?php   
+            try{
+                
+            include_once ("conexion.php");  $db=CConexion::ConexionBD();
+            $filas2=$db->query("SELECT * FROM busqueda")->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(PDOException $e){
+               
+            }
+            
+            ?>
+
+            <table class="table table-hover">
+                <thead><th>BUSCADOR</th><th>COUNT</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($filas2 as $fila): ?>
+                        <tr>
+                            <td><?php echo $fila->buscador; ?></td>
+
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+
         </div>
         
     </div>
