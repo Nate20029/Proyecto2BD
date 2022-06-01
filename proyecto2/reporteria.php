@@ -149,6 +149,43 @@
         </div>
         
         <div class="col-sm-8">
+            <br><br>
+        <h4>●El top 5 de los administradores que más modificaciones realizan en las cuentas de usuario para un rango de fechas dado)</h4><br>
+            
+            <!-- Datos de simulacion -->
+
+            <?php   
+            try{
+                
+            include_once ("conexion.php");  $db=CConexion::ConexionBD();
+            $filas2=$db->query("SELECT usuario, COUNT (usuario) as users FROM bitacora  GROUP BY usuario ORDER BY users DESC LIMIT 5;")->fetchAll(PDO::FETCH_OBJ);
+            }
+            catch(PDOException $e){
+               
+            }
+            
+            ?>
+
+            <table class="table table-hover">
+                <thead><th>USUARIO</th><th>CANTIDAD DE MODIFICACIÓNES</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($filas2 as $fila): ?>
+                        <tr>
+                            <td><?php echo $fila->usuario; ?></td>
+                            <td><?php echo $fila->users; ?></td>
+
+
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+
+        </div>
+
+        
+
+        <div class="col-sm-8">
         <br><br><br>
             <h4>● El top 20 de películas que comenzaron a verse pero que llevan más de 20 días sin finalizarse, para un rango de fechas dado.</h4><br><br>
             
