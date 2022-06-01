@@ -1,5 +1,5 @@
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETCH_OBJ)?>
+$filas=$db->query("SELECT * FROM bitacora ORDER BY id_bi ASC ")->fetchAll(PDO::FETCH_OBJ)?>
 
 <IDOCTYPE html>
 <html lang="es">
@@ -48,28 +48,25 @@ $filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETC
     
     <div class="row">
         <div class="col-sm-8">
-            <h3>Listado de ANUNCIOS</h3>
+            <h3>Bitacora</h3>
             <table class="table table-hover">
-                <thead><th>ID ANUNCIO</th><th>NOMBRE ANUNCIO</th><th>LINK</th><th>EDITAR</th><th>ELIMINAR</th>
+                <thead><th>ID</th><th>USUARIO</th><th>CAMBIO</th><th>FECHA Y HORA</th>
                 </thead>
                 <tbody>
                     <?php foreach ($filas as $fila): ?>
                         <tr>
-                            <td><?php echo $fila->id; ?></td>
-                            <td><?php echo $fila->nombre_anuncio; ?></td>
-                            <td><?php echo $fila->link; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarA.php?id=<?php echo $fila->id;?>" name="boton9"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarA.php?id=<?php echo $fila->id; ?>" name="boton8"></a></td>
+                            <td><?php echo $fila->id_bi; ?></td>
+                            <td><?php echo $fila->usuario; ?></td>
+                            <td><?php echo $fila->cambio; ?></td>
+                            <td><?php echo $fila->fecha_hora; ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success" href="formagregarA.php" name="boton7">Agregar</a>
         </div>
         
     </div>
-    >
-    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>

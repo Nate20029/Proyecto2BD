@@ -178,7 +178,19 @@ try {
 
 
   $sql = "INSERT INTO Cuentas (nombre_com, userc, email, pass_hash, tipo_cuenta, c_admin)
-  VALUES ('$NC','$usuario','$correo','$pass_hash', 'basica', 0)";
+  VALUES ('$NC','$usuario','$correo','$pass_hash', 'basica', 0);
+
+  CREATE OR REPLACE FUNCTION crear_usuario()
+  RETURNS TRIGGER AS
+  $$
+  BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Creo Usuario');
+	RETURN NEW;
+  END;
+  $$
+  LANGUAGE 'plpgsql';";
+  
   // use exec() because no results are returned
   $conn->exec($sql);
   //echo "New record created successfully";

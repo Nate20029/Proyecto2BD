@@ -36,6 +36,9 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
+                    <a href="bitacora.php" class="nav__links">Bitacora</a>
+                </li>
+                <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
@@ -62,13 +65,13 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
                             <td><?php echo $fila->director; ?></td>
                             <td><?php echo $fila->estreno; ?></td>
                             <td><?php echo $fila->duracion; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditar.php?id_sp=<?php echo $fila->id_sp;?>"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminar.php?id_sp=<?php echo $fila->id_sp; ?>"></a></td>
+                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditar.php?id_sp=<?php echo $fila->id_sp;?>" name="boton3"></a></td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminar.php?id_sp=<?php echo $fila->id_sp; ?>" name="boton2"></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success" href="formagregar.php">Agregar</a>
+            <a class="btn btn-success" href="formagregar.php" name= "boton1">Agregar</a>
         </div>
         
     </div>
