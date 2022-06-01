@@ -4,10 +4,11 @@ CREATE TABLE reproducciones(
 	id SERIAL PRIMARY KEY,
 	email VARCHAR(50),
 	perfil VARCHAR(60),
+	terminosp int,
 	serie_pelicula VARCHAR(60),
 	fecha DATE,
-	hora_inicio TIME,
-	hora_final TIME
+	hora_inicial TIME,
+	hora_final TIME,
 );
 
 CREATE TABLE busqueda (buscador VARCHAR (50));
