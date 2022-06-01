@@ -27,11 +27,11 @@ fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 /*indexs*/
 
-create index fecha on reproducciones(fecha);
+CREATE index fecha on reproducciones(fecha);
 
 CREATE INDEX buscador on busqueda(buscador);
 
-
+CREATE INDEX usuario on bitacora(usuario)
 /*Reporteria*/
 
 --1
@@ -46,9 +46,9 @@ FROM busqueda
 GROUP BY buscador ORDER BY busquedas DESC LIMIT 10;
 
 --3
-
-
-
+SELECT usuario, COUNT (usuario) as users
+FROM bitacora
+GROUP BY usuario ORDER BY users DESC LIMIT 5;
 
 --4
 SELECT serie_pelicula, COUNT(serie_pelicula) as cantidad from reproducciones
