@@ -5,8 +5,7 @@ CREATE TABLE reproducciones(
 	email VARCHAR(50),
 	perfil VARCHAR(60),
 	serie_pelicula VARCHAR(60),
-	fecha_inicio DATE,
-	fecha_final DATE,
+	fecha DATE,
 	hora_inicio TIME,
 	hora_final TIME
 );
