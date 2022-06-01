@@ -64,13 +64,13 @@ $filas=$db->query("SELECT * FROM Anuncios ORDER BY id ASC ")->fetchAll(PDO::FETC
                             <td><?php echo $fila->id; ?></td>
                             <td><?php echo $fila->nombre_anuncio; ?></td>
                             <td><?php echo $fila->link; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarA.php?id=<?php echo $fila->id;?>"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarA.php?id=<?php echo $fila->id; ?>"></a></td>
+                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarA.php?id=<?php echo $fila->id;?>" name="boton9"></a></td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarA.php?id=<?php echo $fila->id; ?>" name="boton8"></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success" href="formagregarA.php">Agregar</a>
+            <a class="btn btn-success" href="formagregarA.php" name="boton7">Agregar</a>
         </div>
         
     </div>

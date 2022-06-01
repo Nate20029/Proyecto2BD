@@ -2,12 +2,32 @@
 $id=$_POST['id'];
 $nombre_anuncio=$_POST['nombre_anuncio'];
 $link=$_POST['link'];
+$usuario=$_COOKIE['correoCK'];
 
-include_once ("conexion.php"); 
-$db=CConexion::ConexionBD();
- if ($db->query("UPDATE Anuncios SET nombre_anuncio='$nombre_anuncio', link='$link', WHERE id='$id'")) {
- 	header("location:Anuncios.php");
- } else {
- 	echo 'Error al editar los datos';
- }
- ?>
+try{
+	include_once ("conexion.php");
+	$conn = CConexion::ConexionBD();
+	
+	$sql="UPDATE anuncios SET nombre_anuncio='$nombre_anuncio', link='$link' WHERE id='$id';
+	
+	 CREATE OR REPLACE FUNCTION editar_anuncio()
+	 RETURNS TRIGGER AS
+	 $$
+	 BEGIN
+		INSERT INTO bitacora(usuario, cambio) 
+		VALUES ('$usuario', 'Edito Anuncio');
+		RETURN NEW;
+	 END;
+	 $$
+	 LANGUAGE 'plpgsql';";
+	
+	$conn->exec($sql);
+	include_once ("Anuncios.php"); 
+	//echo "New record created successfully";
+	} catch(PDOException $e) {
+	//echo $sql . "<br>" . $e->getMessage();
+	}
+	$conn = null;
+	
+?>
+

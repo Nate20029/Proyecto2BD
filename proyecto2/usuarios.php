@@ -69,8 +69,8 @@ $filas=$db->query("SELECT id,nombre_com,userc,email,pass_hash,tipo_cuenta,c_admi
                             <td><?php echo $fila->email; ?></td>
                             <td><?php echo $fila->tipo_cuenta; ?></td>
                             <td><?php echo $fila->c_admin; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditaruser.php?id=<?php echo $fila->id;?>"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminaruser.php?id=<?php echo $fila->id; ?>"></a></td>
+                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditaruser.php?id=<?php echo $fila->id;?>" name="boton12"></a></td>
+                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminaruser.php?id=<?php echo $fila->id; ?>" name="boton11"></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

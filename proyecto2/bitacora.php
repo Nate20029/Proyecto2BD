@@ -1,5 +1,5 @@
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(PDO::FETCH_OBJ)?>
+$filas=$db->query("SELECT * FROM bitacora ORDER BY id_bi ASC ")->fetchAll(PDO::FETCH_OBJ)?>
 
 <IDOCTYPE html>
 <html lang="es">
@@ -36,17 +36,6 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
-
-                    <a href="bitacora.php" class="nav__links">Bitacora</a>
-                </li>
-                <li class="nav__items">
-                    <a href="simulacion.php" class="nav__links">Simulacion</a>
-                </li>
-                <li class="nav__items">
-                    <a href="reporteria.php" class="nav__links">Reporteria</a>
-
-                </li>
-                <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">
@@ -59,27 +48,21 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
     
     <div class="row">
         <div class="col-sm-8">
-            <h3>Listado de SERIES Y PELICULAS</h3>
+            <h3>Bitacora</h3>
             <table class="table table-hover">
-                <thead><th>ID SERIE/PELICULA</th><th>NOMBRE SERIE/PELICULA</th><th>IMAGEN</th><th>LINK</th><th>DIRECTOR</th><th>ESTRENO</th><th>DURACIÓN</th><th>EDITAR</th><th>ELIMINAR</th>
+                <thead><th>ID</th><th>USUARIO</th><th>CAMBIO</th><th>FECHA Y HORA</th>
                 </thead>
                 <tbody>
                     <?php foreach ($filas as $fila): ?>
                         <tr>
-                            <td><?php echo $fila->id_sp; ?></td>
-                            <td><?php echo $fila->nombre_serie_pelicula; ?></td>
-                            <td><?php echo $fila->imagen; ?></td>
-                            <td><?php echo $fila->links; ?></td>
-                            <td><?php echo $fila->director; ?></td>
-                            <td><?php echo $fila->estreno; ?></td>
-                            <td><?php echo $fila->duracion; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditar.php?id_sp=<?php echo $fila->id_sp;?>" name="boton3"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminar.php?id_sp=<?php echo $fila->id_sp; ?>" name="boton2"></a></td>
+                            <td><?php echo $fila->id_bi; ?></td>
+                            <td><?php echo $fila->usuario; ?></td>
+                            <td><?php echo $fila->cambio; ?></td>
+                            <td><?php echo $fila->fecha_hora; ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success" href="formagregar.php" name= "boton1">Agregar</a>
         </div>
         
     </div>

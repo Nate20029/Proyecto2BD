@@ -47,47 +47,47 @@ $filas=$db->query("SELECT * FROM serie_pelicula ")->fetchAll(PDO::FETCH_OBJ)?>
         <div class="col-sm-8">
             <CENTER><h3 class="jumbotron">FORMULARIO AGREGAR</h3></CENTER>
             <form action="funagregar.php" method="post" class="form-horizontal">
-                <div class="form-group">
-                <label class="col-sm-2 control-label">NOMBRE DE SERIE O PELICULA</label>
-                <div class="col-sm-10">
-                    <input name='nombre_serie_pelicula' type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">IMAGEN</label>
-                <div class="col-sm-10">
-                    <input name="imagen" type="text" class="form-control" placeholder="Pegue el link de la IMAGEN">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">LINK</label>
-                <div class="col-sm-10">
-                    <input name="links" type="text" class="form-control" placeholder="Pegue el link de la PELICULA/SERIE">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DIRECTOR</label>
-                <div class="col-sm-10">
-                    <input name="director" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">ESTRENO</label>
-                <div class="col-sm-10">
-                    <input name="estreno" type="text" class="form-control" placeholder="Escriba la fecha en este fomato: 2022-12-28">
-                </div>
-                </div>
-                <div class="form-group">
-                <label class="col-sm-2 control-label">DURACIÓN</label>
-                <div class="col-sm-10">
-                    <input name="duracion" type="text" class="form-control" placeholder="Escriba la duracion en este fomato: 00:00:00">
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">ACEPTAR</button>
-                </div>
-                </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">NOMBRE DE SERIE O PELICULA</label>
+                    <div class="col-sm-10">
+                        <input name='nombre_serie_pelicula' type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">IMAGEN</label>
+                    <div class="col-sm-10">
+                        <input name="imagen" type="text" class="form-control" placeholder="Pegue el link de la IMAGEN">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">LINK</label>
+                    <div class="col-sm-10">
+                        <input name="links" type="text" class="form-control" placeholder="Pegue el link de la PELICULA/SERIE">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">DIRECTOR</label>
+                    <div class="col-sm-10">
+                        <input name="director" type="text" class="form-control" placeholder="Escriba el nombre en MAYUSCULA">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">ESTRENO</label>
+                    <div class="col-sm-10">
+                        <input name="estreno" type="text" class="form-control" placeholder="Escriba la fecha en este fomato: 2022-12-28">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">DURACIÓN</label>
+                    <div class="col-sm-10">
+                        <input name="duracion" type="text" class="form-control" placeholder="Escriba la duracion en este fomato: 00:00:00">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">ACEPTAR</button>
+                    </div>
+                    </div>
             </form>
         </div>
     </div>
