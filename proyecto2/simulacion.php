@@ -36,6 +36,9 @@ $filas=$db->query("SELECT * FROM reproducciones ORDER BY id ASC ")->fetchAll(PDO
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
+                    <a href="bitacora.php" class="nav__links">Bitacora</a>
+                </li>
+                <li class="nav__items">
                     <a href="simulacion.php" class="nav__links">Simulacion</a>
                 </li>
                 <li class="nav__items">

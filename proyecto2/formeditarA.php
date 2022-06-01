@@ -48,7 +48,6 @@ $anuncio=$anuncios[0];
     </header>
     
     <div class="row">
-        <div class="col-sm-4"><img src="https://images7.memedroid.com/images/UPLOADED703/61be8f97ad02a.jpeg" height="300" width="300"></div>
         <div class="col-sm-8">
             <CENTER><h3 class="jumbotron">FORMULARIO EDITAR</h3></CENTER>
             <form action="funeditarA.php" method="post" class="form-horizontal">

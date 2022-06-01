@@ -6,7 +6,7 @@ class CConexion {
         $host = "localhost";
         $dbname = "proyecto2";
         $username = "postgres";
-        $password = "123";
+        $password = "contra";
 
         try{
             $conn = new PDO ("pgsql:host=$host; dbname=$dbname", $username, $password);

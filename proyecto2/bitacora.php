@@ -36,6 +36,15 @@ $filas=$db->query("SELECT * FROM bitacora ORDER BY id_bi ASC ")->fetchAll(PDO::F
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
+                    <a href="bitacora.php" class="nav__links">Bitacora</a>
+                </li>
+                <li class="nav__items">
+                    <a href="simulacion.php" class="nav__links">Simulacion</a>
+                </li>
+                <li class="nav__items">
+                    <a href="reporteria.php" class="nav__links">Reporteria</a>
+                </li>
+                <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>
                 </li>
                <img src="./images/close.svg" class="nav__close">

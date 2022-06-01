@@ -56,12 +56,6 @@
 
         <script src="js/script.js"></script>
 </body>
-<?php
-//elimiar cookie correo y perfil para cerrar la sesion
-    setcookie("correoCK", "correo", time() - 30*24*60*60);
-    setcookie("perfilCK", "perfil", time() - 30*24*60*60);
 
-
-?>
 
 </html>
