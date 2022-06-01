@@ -31,7 +31,7 @@ CREATE index fecha on reproducciones(fecha);
 
 CREATE INDEX buscador on busqueda(buscador);
 
-CREATE INDEX usuario on bitacora(usuario)
+CREATE INDEX usuario on bitacora(usuario);
 /*Reporteria*/
 
 --1
