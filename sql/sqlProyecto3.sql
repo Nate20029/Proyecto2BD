@@ -8,7 +8,7 @@ CREATE TABLE reproducciones(
 	serie_pelicula VARCHAR(60),
 	fecha DATE,
 	hora_inicial TIME,
-	hora_final TIME,
+	hora_final TIME
 );
 
 CREATE TABLE busqueda (buscador VARCHAR (50));
