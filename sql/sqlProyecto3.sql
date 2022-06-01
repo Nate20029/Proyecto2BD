@@ -20,8 +20,251 @@ cambio VARCHAR(30),
 fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+/*Bitacora Funciones*/
+
+CREATE OR REPLACE FUNCTION crear_pelicula_serie()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Creo Pelicula o Serie');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION editar_pelicula_serie()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Edito Pelicula o Serie');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION eliminar_pelicula_serie()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Eliminar Pelicula o Serie');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION crear_anuncio()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Creo Anuncio');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION editar_anuncio()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Edito Anuncio');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION eliminar_anuncio()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Elimino Anuncio');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION crear_anunciante()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Crear Anunciante');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION editar_anunciante()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Edito Anunciante');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION eliminar_anunciante()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Elimino Anunciante');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION crear_usuario()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Creo Usuario');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION editar_usuario()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Edito Usuario');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION eliminar_usuario()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Elimino Usuario');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+
+CREATE OR REPLACE FUNCTION crear_perfiles()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Creo Usuario');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION editar_perfiles()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Edito Usuario');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION eliminar_perfiles()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO bitacora(usuario, cambio) 
+	VALUES ('$usuario', 'Elimino Usuario');
+	RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+
 /*Bitacora triggers*/
 
+CREATE TRIGGER pelicula_serie_crear
+AFTER INSERT ON serie_pelicula
+FOR EACH ROW
+EXECUTE PROCEDURE crear_pelicula_serie();
+
+CREATE TRIGGER pelicula_serie_editar
+AFTER UPDATE ON serie_pelicula
+FOR EACH ROW
+EXECUTE PROCEDURE editar_pelicula_serie();
+
+CREATE TRIGGER pelicula_serie_eliminar
+AFTER DELETE ON serie_pelicula
+FOR EACH ROW
+EXECUTE PROCEDURE eliminar_pelicula_serie();
+
+CREATE TRIGGER anuncio_crear
+AFTER INSERT ON anuncios
+FOR EACH ROW
+EXECUTE PROCEDURE crear_anuncio();
+
+CREATE TRIGGER anuncio_editar
+AFTER UPDATE ON anuncios
+FOR EACH ROW
+EXECUTE PROCEDURE editar_anuncio();
+
+CREATE TRIGGER anuncio_eliminar
+AFTER DELETE ON anuncios
+FOR EACH ROW
+EXECUTE PROCEDURE eliminar_anuncio();
+
+CREATE TRIGGER anunciante_crear
+AFTER INSERT ON Anunciante
+FOR EACH ROW
+EXECUTE PROCEDURE crear_anunciante();
+
+CREATE TRIGGER anunciante_editar
+AFTER UPDATE ON Anunciante
+FOR EACH ROW
+EXECUTE PROCEDURE editar_anunciante();
+
+CREATE TRIGGER anunciante_eliminar
+AFTER DELETE ON Anunciante
+FOR EACH ROW
+EXECUTE PROCEDURE eliminar_anunciante();
+
+CREATE TRIGGER usuario_crear
+AFTER INSERT ON cuentas
+FOR EACH ROW
+EXECUTE PROCEDURE crear_usuario();
+
+CREATE TRIGGER usuario_editar
+AFTER UPDATE ON cuentas
+FOR EACH ROW
+EXECUTE PROCEDURE editar_usuario();
+
+CREATE TRIGGER usuario_eliminar
+AFTER DELETE ON cuentas
+FOR EACH ROW
+EXECUTE PROCEDURE eliminar_usuario();
+
+CREATE TRIGGER perfiles_crear
+AFTER INSERT ON perfiles
+FOR EACH ROW
+EXECUTE PROCEDURE crear_perfiles();
+
+CREATE TRIGGER perfiles_editar
+AFTER UPDATE ON perfiles
+FOR EACH ROW
+EXECUTE PROCEDURE editar_perfiles();
+
+CREATE TRIGGER perfiles_eliminar
+AFTER DELETE ON perfiles
+FOR EACH ROW
+EXECUTE PROCEDURE eliminar_perfiles();
 
 
 
