@@ -36,7 +36,15 @@ $filas=$db->query("SELECT * FROM serie_pelicula ORDER BY id_sp ASC ")->fetchAll(
                     <a href="usuarios.php" class="nav__links">Usuarios</a>
                 </li>
                 <li class="nav__items">
+
                     <a href="bitacora.php" class="nav__links">Bitacora</a>
+                </li>
+                <li class="nav__items">
+                    <a href="simulacion.php" class="nav__links">Simulacion</a>
+                </li>
+                <li class="nav__items">
+                    <a href="reporteria.php" class="nav__links">Reporteria</a>
+
                 </li>
                 <li class="nav__items">
                     <a href="inicio.php" class="nav__links">Cerrar sesion</a>

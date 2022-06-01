@@ -1,5 +1,5 @@
 <?php   include_once ("conexion.php");  $db=CConexion::ConexionBD();
-$filas=$db->query("SELECT * FROM Anunciante ORDER BY id ASC ")->fetchAll(PDO::FETCH_OBJ)?>
+$filas=$db->query("SELECT * FROM reproducciones ORDER BY id ASC ")->fetchAll(PDO::FETCH_OBJ)?>
 
 <IDOCTYPE html>
 <html lang="es">
@@ -54,29 +54,42 @@ $filas=$db->query("SELECT * FROM Anunciante ORDER BY id ASC ")->fetchAll(PDO::FE
     
     <div class="row">
         <div class="col-sm-8">
-            <h3>Listado de ANUNCIANTES</h3>
+            <h3>SIMULACION DE OPERACIONES</h3><br><br>
+            
+            <!-- Datos de simulacion -->
+
+            <form action="simulacionCreada.php" method="post" class="form-horizontal">
+            <h5>Ingrese una fecha de reproduccion:</h5>
+            <input name="fecha" type="text" class="form-control" placeholder="Ejemplo: 2022-05-01"></input><br><br>
+
+            <h5>Cantidad de visualizaciones deseadas:</h5>
+            <input name="visualizacion" type="text" class="form-control" placeholder="Ejemplo: 1"></input><br><br>
+            
+            <button  type="submit" class="btn btn-success">Generar</button>
+
+            </form>
+
             <table class="table table-hover">
-                <thead><th>ID</th><th>NOMBRE ANUNCIANTES</th><th>CORREO ANUNCIANTE</th><th>TELEFONO</th><th>EDITAR</th><th>ELIMINAR</th>
+                <thead><th>ID</th><th>EMAIL</th><th></th>PERFIL<th>SERIE_PELICULA</th><th>FECHA</th><th>HORA_INICIAL</th><th>HORA_FINAL</th>
                 </thead>
                 <tbody>
                     <?php foreach ($filas as $fila): ?>
                         <tr>
                             <td><?php echo $fila->id; ?></td>
-                            <td><?php echo $fila->nombre_anunciante; ?></td>
-                            <td><?php echo $fila->correo_anunciante; ?></td>
-                            <td><?php echo $fila->telefono; ?></td>
-                            <td><a class="btn btn-info glyphicon glyphicon-pencil" href="formeditarAt.php?id=<?php echo $fila->id;?>"></a></td>
-                            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="eliminarAt.php?id=<?php echo $fila->id; ?>"></a></td>
+                            <td><?php echo $fila->email; ?></td>
+                            <td><?php echo $fila->perfil; ?></td>
+                            <td><?php echo $fila->serie_pelicula; ?></td>
+                            <td><?php echo $fila->fecha; ?></td>
+                            <td><?php echo $fila->hora_inicial; ?></td>
+                            <td><?php echo $fila->hora_final; ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <a class="btn btn-success" href="formagregarAt.php">Agregar</a>
         </div>
         
     </div>
     
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
